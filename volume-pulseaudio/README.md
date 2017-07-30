@@ -1,8 +1,8 @@
 # volume-pulseaudio
 
-volume-pulseaudio is an i3blocks blocklet to display the system volume and
-optionally the default playback device and index. It also offers controls
-for these via clicks.
+Display the system volume and
+optionally the default playback device and index.
+Offers controls for these via clicks.
 
 ![](volume-pulseaudio-high.png)
 ![](volume-pulseaudio-med.png)
@@ -32,7 +32,7 @@ as long as it agrees what you put for `signal=` in your i3blocks config.
 # Options
 
 ```
-Usage: volume-pulseaudio [-F format] [-f format] [-p] [-H symb] [-M symb]
+Usage: volume-pulseaudio [-S] [-F format] [-f format] [-p] [-a] [-H symb] [-M symb]
         [-L symb] [-X symb] [-T thresh] [-t thresh] [-C color] [-c color] [-h]
 Options:
 -F, -f	Output format (-F long format, -f short format) to use, amonst:
@@ -40,7 +40,10 @@ Options:
 	1	 symb vol [name]
 	2	 symb vol [index]	 (default short)
 	3	 symb vol
+-S  Subscribe to volume events (requires persistent block, always uses long format)
 -p	Omit the percent sign (%) in volume
+-a	Use ALSA name if possible
+-d	Use device description instead of name if possible
 -H	Symbol to use when audio level is high. Default: '  '
 -M	Symbol to use when audio level is medium. Default: '  '
 -L	Symbol to use when audio level is low. Default: '  '
